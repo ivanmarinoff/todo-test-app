@@ -17,6 +17,11 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
-    - run: npm install
-    - run: npx playwright install
-    - run: npm test
+    - name: Install dependencies
+      run: npm install
+
+    - name: Install Playwright
+      run: npx playwright install
+      
+    - name: Test app
+      run: npm test

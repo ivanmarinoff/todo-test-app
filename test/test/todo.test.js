@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 
 test('user can add a task', async ({page}) => {
-    await page.goto('http://localhost:5500');
+    await page.goto('https://to-do-test-app.onrender.com');
     await page.fill('#task-input', 'Test Task');
     await page.click('#add-task');
     const taskTest = await page.textContent('.task');
@@ -9,7 +9,7 @@ test('user can add a task', async ({page}) => {
 });
 
 test('user can delete a task', async ({page}) => {
-    await page.goto('http://localhost:5500');
+    await page.goto('https://to-do-test-app.onrender.com');
     await page.fill('#task-input', 'Test Task');
     await page.click('#add-task');
     await page.click('.task .delete-task');
@@ -21,7 +21,7 @@ test('user can delete a task', async ({page}) => {
 });
 
 test('user can mark a task as completed', async ({page}) => {
-    await page.goto('http://localhost:5500');
+    await page.goto('https://to-do-test-app.onrender.com');
     await page.fill('#task-input', 'Test Task');
     await page.click('#add-task');
     await page.click('.task .task-complete');
@@ -31,7 +31,7 @@ test('user can mark a task as completed', async ({page}) => {
 });
 
 test('user can filter task', async ({ page }) => {
-    await page.goto('http://localhost:5500');
+    await page.goto('https://to-do-test-app.onrender.com');
     await page.fill('#task-input', 'Test Task');
     await page.click('#add-task');
     await page.click('.task .task-complete');
